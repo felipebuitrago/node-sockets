@@ -1,5 +1,6 @@
 const express = require('express');
-const cors = requiere('cors');
+const cors = require('cors');
+const { socketController } = require('../sockets/controller');
 
 class Server {
 
@@ -7,19 +8,24 @@ class Server {
 
         this.app = express();
         this.port = process.env.PORT;
+        this.server = require('http').createServer( this.app );
+        this.io     = require('socket.io')( this.server );
 
         this.paths = {};
 
-        //middlewares
+        // Middlewares
         this.middlewares();
 
-        //rutas
+        // Rutas
         this.routes();
+
+        // Sockets
+        this.sockets();
     }
 
     middlewares(){
 
-        //cors
+        // cors
         this.app.use( cors() );
 
         // public 
@@ -31,9 +37,14 @@ class Server {
         //this.app.use( this.paths.auth, require('../../') )
     }
 
+    sockets() {
+
+        this.io.on('connection', socketController );
+    }
+
     listen(){
 
-        this.app.listen( this.port, () => {
+        this.server.listen( this.port, () => {
             console.log('$$$$ Server listening on port ', this.port, ' $$$$');
         })
     }
