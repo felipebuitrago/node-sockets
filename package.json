@@ -1,0 +1,15 @@
+{
+  "name": "node-sockets",
+  "version": "1.0.0",
+  "description": "FH course",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Felipe Buitrago",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
