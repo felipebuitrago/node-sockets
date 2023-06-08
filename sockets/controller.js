@@ -14,11 +14,8 @@ const socketController = (socket) => {
         callback( id );
 
         socket.broadcast.emit('enviar-mensaje', payload );
-
     })
-
 }
-
 
 module.exports = {
     socketController
