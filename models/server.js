@@ -25,10 +25,10 @@ class Server {
 
     middlewares(){
 
-        // cors
+        // CORS
         this.app.use( cors() );
 
-        // public 
+        // Public Content 
         this.app.use( express.static('public') );
     }
 
