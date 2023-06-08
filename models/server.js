@@ -34,8 +34,7 @@ class Server {
 
     routes(){
 
-        // Routes Config
-        //this.app.use( this.paths.auth, require('../../') )
+        // Routes Config. ex: this.app.use( this.paths.auth, require('../../') )
     }
 
     sockets() {
