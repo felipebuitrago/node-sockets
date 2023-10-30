@@ -10,7 +10,7 @@ const socketController = (socket) => {
 
     socket.on('enviar-mensaje', ( payload, callback ) => {
         
-        const id = 123456789;
+        const id = 12345678955555;
         callback( id );
 
         socket.broadcast.emit('enviar-mensaje', payload );

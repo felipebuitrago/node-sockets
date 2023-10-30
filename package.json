@@ -4,7 +4,8 @@
   "description": "FH course",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "author": "Felipe Buitrago",
   "license": "GPL-3.0-or-later",
