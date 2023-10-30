@@ -1,6 +1,4 @@
-import { config } from 'dotenv';
-config();
-
+import { config } from 'dotenv'; config();
 import express from 'express';
 import { createServer } from 'node:http';
 import { Server as SocketServer } from "socket.io";
