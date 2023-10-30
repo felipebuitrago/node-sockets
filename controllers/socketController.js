@@ -1,6 +1,4 @@
-
-
-const socketController = (socket) => {
+export const socketController = (socket) => {
     
     console.log('Cliente conectado', socket.id );
 
@@ -12,12 +10,8 @@ const socketController = (socket) => {
         
         const id = 12345678955555;
         callback( id );
+        console.log(payload);
 
         socket.broadcast.emit('enviar-mensaje', payload );
     })
-}
-
-module.exports = {
-    socketController
-}
-
+};
